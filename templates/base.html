@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/static/app.css">
+</head>
+
+<body>
+
+<section id="boggleBoardIntro">
+    <h1>  Boggle Game </h1>
+    <h2> Welcome to the game Boggle! </h2>
+    <p> 
+        The objective of this game is to find words that are 
+        weaved into the Boggle Board. Be Careful!! Words can be created from adjacent 
+        letters - that is, letters which are horizontal or vertical neighbors of each 
+        other as well as diagonals. The letters must connect to each other in the proper 
+        sequence to spell the word correctly. This means that the next letter in the word 
+        can be above, below, left, or right of the previous letter in the word 
+        (excluding any letters previously used to construct the word).
+    </p>
+</section>
+
+<section id="boggleBoard">
+    <p> 
+
+        <!-- 
+        With this part of the code you must remember the syntax for a table
+        and also you must remember how to use / write jinja. These for loops 
+        are in jinja and you must know how to breakdown the table so you can get 
+        the desired result. 
+        -->
+        <table>
+
+            <tbody>
+            {% for row in create_board %}
+            <tr>
+                {% for cell in row %}
+                <td>{{cell}} </td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+
+    </p>
+
+
+
+    <form  class="add-word">
+
+        <label> Enter Valid Word: </label>
+        <input type="text" placeholder="Word Submission" name="wordsubmit" class="wordsubmit">
+        
+
+        <button id="Submit"> Submit </button>
+
+    </form>
+
+</section>
+
+<!-- JQuery Install -->
+<script src="http://unpkg.com/jquery"></script>
+<!-- Axios Install -->
+<script src="https://unpkg.com/axios@0.19.0/dist/axios.js"></script>
+<script src="/static/app.js"></script>
+</body>
+
+</html>
